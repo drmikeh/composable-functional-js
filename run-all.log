@@ -1,0 +1,50 @@
+a
+4
+3B5998
+8888
+Sum(3)
+All(false)
+First(blah)
+{
+    "name": {
+        "x": "Nico"
+    },
+    "isPaid": {
+        "x": true
+    },
+    "points": {
+        "x": 12
+    },
+    "friends": [
+        "Franklin",
+        "Gatsby"
+    ]
+}
+Sum(6)
+Sum(0)
+All(false)
+All(true)
+Product(24)
+Max(4)
+Min(2)
+Left(Sum(54))
+Right(null)
+Right(undefined)
+result 1:  Sum(6)
+result 2:  Sum(12)
+result 3:  Sum(6)
+43
+43
+  LazyBoxVerbose map: n => n + 1
+  LazyBoxVerbose map: s => new Number(s)
+  LazyBoxVerbose map: s => s.trim()
+    the result is (42, string) after applying f: s => s.trim()
+    the result is (42, object) after applying f: s => new Number(s)
+    the result is (43, number) after applying f: n => n + 1
+43
+launch missiles!
+The value is missiles!!
+success!
+Success!
+Box(MIKE) Box(MIKE)
+Box(crayons) Box(crayons)
