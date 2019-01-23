@@ -2,8 +2,8 @@
  * Example 14 - You've been using Functors
  * 
  * A Functor is a type that has a `map` method that obeys 2 laws:
- *   (1) fx.map(f).map(g) == fx.map(x => g(f(x)))
- *   (2) fx.map(id) == id(fx)
+ *   (1) fx.map(f).map(g) == fx.map(x => g(f(x)))  // composition is preserved
+ *   (2) fx.map(id) == id(fx)                      // identity is preserved
  */
 const Box = x => ({
     map: f => Box(f(x)),

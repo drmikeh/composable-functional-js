@@ -6,6 +6,8 @@ const Box = require('./Box');
  * Monads have an `of` method and a `chain` method.
  *   - `of` puts a value into a Monad
  *   - `chain` (aka `flatMap` or `bind`)
+ *   - M.of(a).chain(f) is equivalent to f(a)(left identity)
+ *   - m.chain(M.of) is equivalent to m (right identity)
  */
 
 /*
