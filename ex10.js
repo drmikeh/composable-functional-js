@@ -28,6 +28,6 @@ const res2 = Map({
 const res3 = List.of(1, 2, 3)
     .foldMap(Sum, Sum.empty())
 
-console.log("result 1: ", res1.toString());
-console.log("result 2: ", res2.toString())
-console.log("result 3: ", res3.toString())
+console.log('Example 10: result 1: ', res1.toString());
+console.log('Example 10: result 2: ', res2.toString())
+console.log('Example 10: result 3: ', res3.toString())

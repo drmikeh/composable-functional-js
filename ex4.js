@@ -43,4 +43,4 @@ const getPort = () =>
         .fold(c => c.port, e => 3000);
 
 const result = getPort();
-console.log(result);
+console.log('Example 4:', result);

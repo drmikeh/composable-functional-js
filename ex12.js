@@ -5,7 +5,7 @@ const { task } = require('folktale/concurrency/task');
  */
 const launchMissiles = () =>
   task(resolver => {
-    console.log('launch missiles!')
+    console.log('Example 12: launch missiles!')
     resolver.resolve('missiles')
   });
 
@@ -16,6 +16,6 @@ app
   .run()
   .listen({
     onCancelled: () => { console.log('the task was cancelled'); },
-    onRejected: error => { console.log('ERROR:', error) },
-    onResolved: value => { console.log(`The value is ${value}`) }
+    onRejected: error => { console.log('Example 12: ERROR:', error) },
+    onResolved: value => { console.log(`Example 12: The value is ${value}`) }
   });

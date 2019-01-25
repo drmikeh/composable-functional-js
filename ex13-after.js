@@ -28,7 +28,7 @@ const app = readFile('config.json', 'utf-8')
     .chain(contents => writeFile('config1.json', contents));
 
 app.run().listen({
-    onCancelled: () => { console.log('the task was cancelled'); },
-    onRejected: error => { console.log('ERROR:', error) },
-    onResolved: value => { console.log('Success!') }
+    onCancelled: () => { console.log('Example 13-after: the task was cancelled'); },
+    onRejected: error => { console.log('Example 13-after: ERROR:', error) },
+    onResolved: value => { console.log('Example 13-after: Success!') }
 });

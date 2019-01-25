@@ -16,4 +16,4 @@ const res = findColor('blue')
     .map(c => c.toUpperCase())
     .fold(x => x, e => 'no color');
 
-console.log(res);
+console.log('Example 3:', res);

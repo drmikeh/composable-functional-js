@@ -27,7 +27,7 @@ const m1 = Box(Box(Box(3)));
 const r1 = join(m1.map(join));
 const r2 = join(join(m1));
 
-console.log(r1.toString(), r2.toString());
+console.log('Example 16:', r1.toString(), r2.toString());
 
 // 2nd Law of Monads
 //   join(Box.of(m)) == join(m.map(Box.of))
@@ -36,4 +36,4 @@ const m2 = Box('wonder');
 const r3 = join(Box.of(m2));
 const r4 = join(m2.map(Box.of));
 
-console.log(r3.toString(), r4.toString());
+console.log('Example 16:', r3.toString(), r4.toString());

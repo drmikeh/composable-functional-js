@@ -8,7 +8,7 @@ const app = () => (
 
         fs.writeFile('config1.json', newContents, (err, _) => {
             if (err) throw err;
-            console.log('success!');
+            console.log('Example 13-before: success!');
         });
     })
 );

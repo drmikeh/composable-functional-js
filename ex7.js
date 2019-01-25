@@ -10,4 +10,4 @@ const { First, All, Sum } = require('./FirstAllSum');
 const acct1 = Map({ name: First('Nico'), isPaid: All(true), points: Sum(10), friends: ['Franklin'] })
 const acct2 = Map({ name: First('Nico'), isPaid: All(true), points: Sum(2), friends: ['Gatsby'] })
 const res = acct1.concat(acct2);
-console.log(JSON.stringify(res, null, 4));
+console.log('Example 7:', JSON.stringify(res, null, 4));

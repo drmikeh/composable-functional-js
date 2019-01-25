@@ -14,7 +14,7 @@ const Product = x => ({
 });
 Product.empty = () => Product(1); // one is the identify value for multiplication
 
-console.log(Product(2).concat(Product(3).concat(Product(4))).toString());
+console.log('Example 9:', Product(2).concat(Product(3).concat(Product(4))).toString());
 
 
 // Any - a logical OR boolean data type
@@ -36,7 +36,7 @@ const Max = x =>
 });
 Max.empty = () => Max(-Infinity); // -Infinity is the identify value for Max
 
-console.log(Max(2).concat(Max(4).concat(Max(3))).toString());
+console.log('Example 9:', Max(2).concat(Max(4).concat(Max(3))).toString());
 
 // Min
 const Min = x =>
@@ -47,7 +47,7 @@ const Min = x =>
 });
 Min.empty = () => Min(Infinity); // Infinity is the identify value for Min
 
-console.log(Min(2).concat(Min(4).concat(Min(3))).toString());
+console.log('Example 9:', Min(2).concat(Min(4).concat(Min(3))).toString());
 
 // Left with concat
 const Left = x => ({
@@ -74,9 +74,9 @@ const stats = List.of(
     { page: 'Blog', views: 4 },
 );
 
-console.log(stats.foldMap(x => Maybe(x.views).map(Sum), Left(Sum.empty())).toString());
+console.log('Example 9:', stats.foldMap(x => Maybe(x.views).map(Sum), Left(Sum.empty())).toString());
 const updatedStats = stats.push({ page: 'Help', views: null });
-console.log(updatedStats.foldMap(x => Maybe(x.views).map(Sum), Left(Sum.empty())).toString());
+console.log('Example 9:', updatedStats.foldMap(x => Maybe(x.views).map(Sum), Left(Sum.empty())).toString());
 
 // First
 const First = either => ({
@@ -92,4 +92,4 @@ List(xs)
     .fold(x => x);
 
 const r = find([3, 4, 5, 6, 7], x => x > 4);
-console.log(r.toString());
+console.log('Example 9:', r.toString());

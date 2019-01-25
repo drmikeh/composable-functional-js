@@ -21,4 +21,4 @@ const applyDiscount = (price, discount) =>
             cost - cost * savings));
 
 const result = applyDiscount('$5.00', '20%');
-console.log(result);
+console.log('Example 2:', result);

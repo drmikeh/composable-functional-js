@@ -19,7 +19,7 @@ const res1 = Box('Dr. Mike Hopper')
 const res2 = Box('Dr. Mike Hopper')
     .map(s => s.substr(4, 4).toUpperCase())
 
-console.log(res1.toString(), res2.toString());
+console.log('Example 14:', res1.toString(), res2.toString());
 
 /**
  * NOTE: you can substitute for Box above any of the following Functors:
@@ -31,4 +31,4 @@ const id = x => x;
 const res3 = Box('crayons').map(id);
 const res4 = id(Box('crayons'));
 
-console.log(res3.toString(), res4.toString());
+console.log('Example 14:', res3.toString(), res4.toString());

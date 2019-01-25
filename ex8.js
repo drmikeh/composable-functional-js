@@ -11,8 +11,8 @@ xs.reduce((acc, x) => acc.concat(x), Sum.empty());
 const all = xs =>
 xs.reduce((acc, x) => acc.concat(x), All.empty());
 
-console.log(sum([Sum(1), Sum(2), Sum(3)]).toString());
-console.log(sum([]).toString());
+console.log('Example 8:', sum([Sum(1), Sum(2), Sum(3)]).toString());
+console.log('Example 8:', sum([]).toString());
 
-console.log(all([All(true), All(false)]).toString());
-console.log(all([]).toString());
+console.log('Example 8:', all([All(true), All(false)]).toString());
+console.log('Example 8:', all([]).toString());
