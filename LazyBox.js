@@ -6,8 +6,8 @@
  * Thus we have composition and lazy evaluation.
  */
 const LazyBox = g => ({
-    fold: f => f(g()),
     map: f => LazyBox(() => f(g())),
+    fold: f => f(g()),
     toString: () => `LazyBox(${g})`
 });
 

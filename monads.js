@@ -106,7 +106,7 @@
         with a blank string:
     */
     
-    const unit = x => [x, ''];
+    const unit = (x, s='') => [x, s];
     console.log('unit:', f(unit(3)));
     
     // We can also compose f and unit, like this:
@@ -127,6 +127,10 @@
     const roundDebugB = compose(bind(x => unit(round(x))), compose(bind(roundDebugMessage), unit));
     console.log('roundDebugB:', roundDebugB(12.34));
 
+    // or how about this:
+    const roundDebugC = compose(bind(x => unit(round(x), `round was called with value ${x}.`)));
+    console.log('roundDebugC:', roundDebugB(12.34));
+
     /* This type of conversion, from a 'plain' function to a debuggable one, can be abstracted
        into a function we’ll call `lift`.
 
@@ -140,17 +144,21 @@
     const unitBind = f => compose(bind(f), unit);
     const applyUnitBind = f => bind(x => unit(f(x)));
 
+    /** Cheatsheet
+     * unit          :: number   -> tuple                                    // put a value inside a container
+     * bind          :: f(number -> tuple)  -> function (tuple -> tuple)     // make a function composable
+     * unitBind      :: f(number -> tuple)  -> function (tuple -> tuple)     // promote value, then apply
+     * applyUnitBind :: f(number -> number) -> function (number -> tuple)    // apply, then promote result
+     */
+
     // Let’s try this out with our existing functions and see if it works:
-    // const roundDebugC = compose(bind(x => unit(round(x))), liftUnit(roundDebugMessage));
-    const roundDebugC = compose(applyUnitBind(round), unitBind(roundDebugMessage));
-    console.log('roundDebugC:', roundDebugC(12.34));
+    // const roundDebugD = compose(bind(x => unit(round(x))), liftUnit(roundDebugMessage));
+    const roundDebugD = compose(applyUnitBind(round), unitBind(roundDebugMessage));
+    console.log('roundDebugD:', roundDebugD(12.34));
 
-    const composableCube = unitBind(cube);
-    console.log('composableCube:', composableCube(2.789));
-
-    const f2 = compose(compose(bind(roundDebugA), bind(roundDebugMessage)), composableCube);
+    const f2 = compose(compose(applyUnitBind(round), bind(roundDebugMessage)), unitBind(cube));
     console.log('LIFT A:', f2(2.789));
 
-    const f3 = compose(bind(cube), roundDebugC);
+    const f3 = compose(bind(cube), roundDebugD);
     console.log('LIFT B:', f3(2.789));
 }();
